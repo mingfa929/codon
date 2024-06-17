@@ -48,7 +48,7 @@ function build_codon(){
                 -DCMAKE_INSTALL_PREFIX=${codon_install_dir} \
                 ${CODON_TOOLS}
     fi
-    ninja -C $build_codon -j $(nproc)
+    ninja -C ${codon_build_dir} -j$(nproc)
     # ninja -C ${codon_build_dir} -j $(nproc) install
 }
 

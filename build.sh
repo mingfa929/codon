@@ -48,8 +48,8 @@ function build_codon(){
                 -DCMAKE_INSTALL_PREFIX=${codon_install_dir} \
                 ${CODON_TOOLS}
     fi
-    #ninja -C $build_codon -j $(nproc)
-    ninja -C ${codon_build_dir} -j $(nproc) install
+    ninja -C $build_codon -j $(nproc)
+    # ninja -C ${codon_build_dir} -j $(nproc) install
 }
 
 build_codon
@@ -59,3 +59,4 @@ echo "export CODON_INS_DIR=$codon_install_dir"
 echo "export CODON_DIR=$codon_dir"
 echo "export PATH=\$CODON_INS_DIR/bin:\$PATH"
 echo "./build/codon build -release -llvm test/fib.codon"
+echo " export CODON_PATH=$PWD/stdlib"

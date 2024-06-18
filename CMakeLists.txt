@@ -10,6 +10,9 @@ configure_file("${PROJECT_SOURCE_DIR}/cmake/config.h.in"
 configure_file("${PROJECT_SOURCE_DIR}/cmake/config.py.in"
                "${PROJECT_SOURCE_DIR}/jit/codon/version.py")
 
+set(CMAKE_BUILD_WITH_INSTALL_NAME_DIR ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 option(CODON_GPU "build Codon GPU backend" OFF)
 
 set(CMAKE_CXX_STANDARD 17)
